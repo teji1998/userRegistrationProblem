@@ -5,10 +5,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserValidationTest {
-	@Test
+
+	UserValidation userValidation = new UserValidation();
+	boolean result = userValidation.validateFirstName("Tejaswini");@Test
 	public void givenFirstName_WhenProper_ShouldReturnTrue() {
-		UserValidation userValidation = new UserValidation();
-		boolean result = userValidation.validateFirstName("Tejaswini");
 		Assert.assertEquals(true, result);
 	}
 
@@ -63,7 +63,7 @@ public class UserValidationTest {
 	@Test
 	public void givenPassword_WhenProper_ShouldReturnTrue() {
 		UserValidation userValidation=new UserValidation();
-		boolean result=userValidation.validatePassword("tejaswini1998");
+		boolean result=userValidation.validatePassword("Tejaswini1998");
 		Assert.assertEquals(true,result);
 	}
 	@Test
