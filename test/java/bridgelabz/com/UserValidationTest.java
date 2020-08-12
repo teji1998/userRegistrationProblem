@@ -63,7 +63,7 @@ public class UserValidationTest {
 	@Test
 	public void givenPassword_WhenProper_ShouldReturnTrue() {
 		UserValidation userValidation=new UserValidation();
-		boolean result=userValidation.validatePassword("Tejaswini1998");
+		boolean result=userValidation.validatePassword("Tejaswini+1998");
 		Assert.assertEquals(true,result);
 	}
 	@Test
