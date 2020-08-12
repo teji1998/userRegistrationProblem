@@ -32,4 +32,21 @@ public class UserValidationTest {
 		boolean result=userValidation.validateFirstName("Ku");
 		Assert.assertEquals(false,result);
 	}
+<<<<<<< HEAD
 }
+=======
+	@Test
+	public void givenEmailId_WhenProper_ShouldReturnTrue() {
+		UserValidation userValidation=new UserValidation();
+		boolean result=userValidation.validateEmailId("tejasvinirpk@gmail.com");
+		Assert.assertEquals(true,result);
+	}
+
+	@Test
+	public void givenEmailId_WhenShort_ShouldReturnFalse() {
+		UserValidation userValidation=new UserValidation();
+		boolean result=userValidation.validateEmailId("@yahoo.com");
+		Assert.assertEquals(false,result);
+	}
+}
+>>>>>>> UC3
