@@ -30,8 +30,8 @@ public class UserValidation {
 
 	}
 
-	public boolean validatePassword(String passsword) {
+	public boolean validatePassword(String password) {
 		Pattern pattern=Pattern.compile(PASSWORD_PATTERN);
-		return pattern.matcher(passsword).matches();
+		return pattern.matcher(password).matches();
 	}
 }
