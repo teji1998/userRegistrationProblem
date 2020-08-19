@@ -49,6 +49,20 @@ public class UserValidationTest {
 	}
 
 	@Test
+	public void givenEmailId_WhenMissingTheRequiredSymbols_ShouldReturnFalse() {
+		UserValidation userValidation = new UserValidation();
+		boolean result = userValidation.validateEmailId("tejirpkyahoo.com");
+		Assert.assertFalse(result);
+	}
+
+	@Test
+	public void givenEmailId_WhenDoesNotContainTheCompulsoryPart_ShouldReturnFalse() {
+		UserValidation userValidation = new UserValidation();
+		boolean result = userValidation.validateEmailId("tejik@hotmail.");
+		Assert.assertFalse(result);
+	}
+
+	@Test
 	public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
 		UserValidation userValidation = new UserValidation();
 		boolean result = userValidation.validatePhoneNumber("91 9920275347");
@@ -73,6 +87,27 @@ public class UserValidationTest {
 	public void givenPassword_WhenNotProper_ShouldReturnFalse() {
 		UserValidation userValidation = new UserValidation();
 		boolean result = userValidation.validatePassword("teju");
+		Assert.assertFalse(result);
+	}
+
+	@Test
+	public void givenPassword_WhenContainsNoSpecialCharacter_ShouldReturnFalse() {
+		UserValidation userValidation = new UserValidation();
+		boolean result = userValidation.validatePassword("teju12345");
+		Assert.assertFalse(result);
+	}
+
+	@Test
+	public void givenPassword_WhenContainsNoNumbers_ShouldReturnFalse() {
+		UserValidation userValidation = new UserValidation();
+		boolean result = userValidation.validatePassword("teju@kulk");
+		Assert.assertFalse(result);
+	}
+
+	@Test
+	public void givenPassword_WhenContainsNoUpperCaseLetter_ShouldReturnFalse() {
+		UserValidation userValidation = new UserValidation();
+		boolean result = userValidation.validatePassword("teji$1356");
 		Assert.assertFalse(result);
 	}
 }
