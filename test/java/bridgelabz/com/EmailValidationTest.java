@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -17,12 +16,13 @@ public class EmailValidationTest {
 	public UserValidation userValidation;
 
 	public EmailValidationTest(String email,boolean result){
-		this.email=email;
-		this.result=result;
+		this.email = email;
+		this.result = result;
 	}
+
 	@Before
 	public void initialize(){
-		userValidation=new UserValidation();
+		userValidation = new UserValidation();
 	}
 	@Parameterized.Parameters
 	public static Collection input(){
@@ -52,6 +52,7 @@ public class EmailValidationTest {
 
 	@Test
 	public void emailValidity() {
+
 		Assert.assertEquals(result,userValidation.validateEmailId(email));
 	}
 }
